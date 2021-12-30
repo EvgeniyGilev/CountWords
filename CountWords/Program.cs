@@ -42,7 +42,7 @@ namespace CountWords
 
             Console.WriteLine("10 самых встречающихся слов");
 
-            //используем сортировку
+            //используем сортировку и берем 10 значений сразу
             foreach (var pair in dictionaryWords.OrderByDescending(pair => pair.Value).Take(10))
             {
                 Console.WriteLine("{0} - {1}", pair.Key, pair.Value);
