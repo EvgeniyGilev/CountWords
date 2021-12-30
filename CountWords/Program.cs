@@ -13,18 +13,18 @@ namespace CountWords
             string text = File.ReadAllText(@"C:\temp1\Text1.txt");
 
             // Сохраняем символы-разделители в массив
-            char[] delimiters = new char[] {' ', '\r', '\n'};
+            char[] delimiters = new char[] { ' ', '\r', '\n' };
 
             var noPunctuationText = new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
 
             // разбиваем нашу строку текста, используя ранее перечисленные символы-разделители
             var words = noPunctuationText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-            
+
             // выводим количество
             Console.WriteLine("Количество слов в тексте: " + words.Length);
-            
+
             //создаем словарь
-            Dictionary<string, int> dictionaryWords=
+            Dictionary<string, int> dictionaryWords =
                 new Dictionary<string, int>();
 
             //заполняем словарь
@@ -32,7 +32,7 @@ namespace CountWords
             {
                 if (!dictionaryWords.ContainsKey(word))
                 {
-                    dictionaryWords.Add(word,0);
+                    dictionaryWords.Add(word, 1);
                 }
                 else
                 {
